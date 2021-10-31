@@ -1,5 +1,5 @@
 const bench = require('nanobench')
-const {dummyNumericArrayGenerator} = require('./../../utility/playgorung-utils');
+const {dummyNumericArrayGenerator} = require('./../../../utility/playgorung-utils');
 const bubbleSort = require('./algorithms/bubble-sort');
 const cocktailSort = require('./algorithms/cocktail-sort');
 const combSort = require('./algorithms/comb-sort');
