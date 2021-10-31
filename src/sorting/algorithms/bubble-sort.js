@@ -1,8 +1,9 @@
 const bubbleSort = (arr) => {
-    const count = arr.length;
-    for (let j = 0; j < (count - 1); j++) {
-        for (let i = 0; i < (count - j - 1); i++) {
-            [arr[i], arr[i + 1]] = [arr[i + 1], arr[i]];
+    for (let i = 0; i < arr.length; i++) {
+        for (let j = 0; j < arr.length - i - 1; j++) {
+            if (arr[j + 1] < arr[j]) {
+                [arr[j + 1], arr[j]] = [arr[j], arr[j + 1]]
+            }
         }
     }
     return arr;
