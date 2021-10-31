@@ -1,3 +1,5 @@
+const bench = require('nanobench')
+
 const loopCount = 1000000000;
 
 // Sum all numbers in range `0-n` and compare process times
@@ -40,13 +42,23 @@ const performance = (callback, num) => {
 };
 
 const start = () => {
-    const while_performance = performance(while_loop, loopCount);
-    const for_performance = performance(for_loop, loopCount);
-    const do_while_performance = performance(do_while_loop, loopCount);
+    bench('While loop', (b) => {
+        b.start();
+        while_loop(loopCount);
+        b.end();
+    });
 
-    console.log(`While loop took : ${while_performance.time} millisecond. Sum : ${while_performance.total}`);
-    console.log(`For loop took : ${for_performance.time} millisecond. Sum : ${for_performance.total}`);
-    console.log(`Do-While loop took : ${do_while_performance.time} millisecond. Sum : ${do_while_performance.total}`);
+    bench('For loop', (b) => {
+        b.start();
+        for_loop(loopCount);
+        b.end();
+    });
+
+    bench('Do-While loop', (b) => {
+        b.start();
+        for_loop(loopCount);
+        b.end();
+    });
 };
 
 start();

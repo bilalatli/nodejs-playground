@@ -16,5 +16,8 @@
   "bugs": {
     "url": "https://github.com/bilalatli/nodejs-playground/issues"
   },
-  "homepage": "https://github.com/bilalatli/nodejs-playground#readme"
+  "homepage": "https://github.com/bilalatli/nodejs-playground#readme",
+  "dependencies": {
+    "nanobench": "^2.1.1"
+  }
 }
